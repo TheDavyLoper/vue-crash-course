@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css" />
+  <title>VueJs Tutorial: Components</title>
+  <!-- Vue.js -->
+  <script src="js/vue.min.js"></script>
+</head>
+
+<body>
+  <div class="container" id="app">
+    
+    <hello data="37"></hello>
+    
+  </div>
+  
+  <!--javascript source files-->
+  <script src="js/jquery.min.js" crossorigin="anonymous"></script>
+  <script src="js/popper.js" crossorigin="anonymous"></script>
+  <script src="js/bootstrap.min.js" crossorigin="anonymous"></script>
+  <script>
+    Vue.component('hello', {
+      
+      props: ['data'],
+      
+      template: `
+      <div>
+        <h1>{{h1}}</h1> <br /> <br />
+        <button @click="display" class="btn btn-outline-primary">Click</button>
+        <br /> <br />
+        <p>{{data}}</p>
+      </div>  
+      `,
+      
+      data() {
+        return {
+          h1: 'Data In Component'
+        }
+      },
+      
+      methods: {
+        display() {
+          console.log('button clicked');
+        }
+      }
+    });
+
+    const vm = new Vue({
+      el: '#app'
+    })
+    
+  </script>
+</body>
+
+</html>
