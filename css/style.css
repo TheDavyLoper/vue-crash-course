@@ -1,0 +1,14 @@
+.myClass {
+  width: 100px;
+  height: 100px;
+  background: yellow;
+}
+
+.myClass:hover {
+  transform: scale(2);
+  background: red;
+}
+
+.border {
+  border: 2px dashed green;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css" />
+  <title>VueJs Tutorial: Computed Properties</title>
+  <!-- Vue.js -->
+  <script src="js/vue.min.js"></script>
+</head>
+
+<body>
+  <div class="container" id="app">
+    <h1>{{h1}}</h1>
+    {{ reverse }}
+  </div>
+  
+  <!--javascript source files-->
+  <script src="js/jquery.min.js" crossorigin="anonymous"></script>
+  <script src="js/popper.js" crossorigin="anonymous"></script>
+  <script src="js/bootstrap.min.js" crossorigin="anonymous"></script>
+  <script>
+    const vuejs = new Vue({
+      el: '#app',
+      data: {
+        h1: 'Computed Properties',
+        message: 'Hello World!'
+      },
+      computed: {
+        reverse() {
+          return this.message.split('').reverse().join('')
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>
